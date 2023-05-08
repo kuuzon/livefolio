@@ -1,0 +1,25 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.light {
+  @include setBackground($brandColor);
+
+  .navLink {  
+    color: $primaryColor;
+
+    &:hover {  
+      color: $complementarySkewColor;
+    }
+  }
+}
+
+.dark {
+  @include setBackground($complementarySkewColor);
+
+  .navLink {  
+    color: $primaryColor;
+
+    &:hover {  
+      color: $brandColor;
+    }
+  }
+}

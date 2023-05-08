@@ -1,0 +1,17 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.banner {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 40px;
+  text-align: center;
+}
+
+.light {
+  background: $primaryColor;
+}
+
+.dark {
+  background: $complementarySkewColor;
+}

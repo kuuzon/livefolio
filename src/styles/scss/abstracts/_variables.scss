@@ -1,0 +1,39 @@
+// TYPOGRAPHY
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap');
+$primaryFont: 'Rubik', Arial, Helvetica, sans-serif; 
+
+// COLORS (https://tailwindcss.com/docs/customizing-colors)
+$primaryColor: #f9fafb;
+$complementaryColor: #111827;
+$complementarySkewColor: #1f2937;
+$brandColor: #60a5fa;
+$brandSkewColor: #818cf8;
+$highlightColor: #9ca3af;
+$succesColor: #16a34a;
+$errorColor: #dc2626;
+
+// THEME COLORS
+$lightMode: #eab308;
+$darkMode: #6366f1;
+
+// MIXIN: Set text color dynamically
+@mixin setBackground($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+// FUNCTIONS
+@function set-text-color($color){
+  @if(lightness($color) > 70) { 
+    @return $complementaryColor; 
+  } @else {
+    @return $primaryColor;
+  }
+}
+
+// BS-COLORS
+$white: #FFFFFF;
+$dark: $brandColor;
+$danger: $errorColor;
+
+// BS-UTILITIES: Spacer
+$spacer: 2rem;

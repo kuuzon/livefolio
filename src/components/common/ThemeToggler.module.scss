@@ -1,0 +1,9 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.toggleContainer {
+  display: inline-block;
+
+  .label {
+    display: none;
+  }
+}

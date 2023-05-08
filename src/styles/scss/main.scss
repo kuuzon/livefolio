@@ -1,0 +1,25 @@
+// MAIN SCSS FILE
+
+/** TABLE OF CONTENTS 
+-----------------------
+-- REMINDER: abstract/variables.scss needs to be brought into components that require it! 
+
+-- vendor imports
+-- base imports
+-- component imports
+-- layout imports
+-- page imports
+**/
+
+// vendor imports
+@use './vendors/bootstrap';
+
+// base imports
+@use './base/base';
+
+// component imports (NOW: SCSS Modules)
+
+// layout imports (NOW: SCSS Modules)
+
+// page imports (OPTION: can be used as SCSS Modules if preferred)
+@use './pages/notfound';

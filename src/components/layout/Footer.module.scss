@@ -1,0 +1,13 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.footer {
+  text-align: center;
+}
+
+.light {
+  @include setBackground($brandColor);
+}
+
+.dark {
+  @include setBackground($complementarySkewColor);
+}
