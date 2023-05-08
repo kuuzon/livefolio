@@ -1,0 +1,89 @@
+@use '@/styles/scss/abstracts/' as *;
+
+%customAnchor {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  min-height: 200px;
+  justify-content: space-between;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .repoHeader {
+    h3 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+  
+    p {
+      margin: 1rem 0;
+      font-size: 1em;
+    }
+  }
+
+  .repoDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  
+    span {
+      display: flex;
+      align-items: center;
+    }
+  
+    svg {
+      margin-right: 0.5rem;
+    } 
+  }
+}
+
+.light.repoItem {
+  a {
+    @extend %customAnchor;
+    color: $brandDarkColor;
+    background-color: $primaryColor;
+
+    &:hover {
+      background-color: $highlightSkewColor;
+    }
+
+    .repoHeader {
+      p {
+        color: $complementaryColor;
+      }
+    }
+
+    .repoDetails {
+      color: $brandDarkColor;
+    }
+  }
+}
+
+.dark.repoItem {
+  a {
+    @extend %customAnchor;
+    color: $brandColor;
+    background-color: $complementarySkewColor;
+
+    &:hover {
+      background-color: $complementaryLightColor;
+    }
+
+    .repoHeader {
+      p {
+        color: $primaryColor;
+      }
+    }
+
+    .repoDetails {
+      color: $highlightColor;
+    }
+  }
+}

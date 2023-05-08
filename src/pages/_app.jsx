@@ -1,4 +1,5 @@
-import '@/styles/globals.css';
+// import '@/styles/globals.css';
+import '@/styles/scss/main.scss';
 import { ThemeProvider } from '../contexts/ThemeContext';
 import Layout from '@/components/layout/Layout';
 

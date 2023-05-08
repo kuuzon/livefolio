@@ -1,19 +1,17 @@
-import styles from './HeroBox.module.scss'
-import AbpButton from './AbpButton';
-import useTheme from '@/hooks/useTheme';
+import styles from "./HeroBox.module.scss";
+import useTheme from "@/hooks/useTheme";
 
-const HeroBox = ({ children, values: { title, content, path } }) => {
+const HeroBox = ({ title, children, path }) => {
   const { theme } = useTheme();
 
   return (
     <div className={`${styles.banner} ${styles[theme]}`}>
-      <h1>{title}</h1>
-      <p>{content}</p>
-      <AbpButton path={path}>
+      <h2>{title}</h2>
+      <div>
         {children}
-      </AbpButton>
+      </div>
     </div>
   );
 };
 
-export default HeroBox
+export default HeroBox;

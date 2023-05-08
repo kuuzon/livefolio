@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <footer className={`${styles.footer} ${styles[theme]} py-3`}>
-      &copy; {getCurrentYear()} PortfolioBase
+      &copy; {getCurrentYear()} <span>LIVE</span>FOLIO
     </footer>
   )
 }

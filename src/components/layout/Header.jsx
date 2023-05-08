@@ -22,12 +22,12 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           {/* LEFT MAIN NAVS */}
           <Nav className="me-auto">
-            <Nav.Link className={styles.navLink} as={Link} href="/about">About</Nav.Link>
-            <Nav.Link className={styles.navLink} as={Link} href="/projects">Projects</Nav.Link>
-            <Nav.Link className={styles.navLink} as={Link} href="/code">Code</Nav.Link>
+            <Nav.Link className={styles.navLink} as={Link} href="/about">ABOUT</Nav.Link>
+            <Nav.Link className={styles.navLink} as={Link} href="/projects">PROJECTS</Nav.Link>
+            <Nav.Link className={styles.navLink} as={Link} href="/repos">REPOS</Nav.Link>
           </Nav>
           {/* RIGHT MAIN NAVS */}
-          <div>
+          <div className="mt-1">
             <ThemeToggler />
           </div>
 

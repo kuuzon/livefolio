@@ -4,14 +4,16 @@
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
-  padding: 40px;
+  padding: 30px;
   text-align: center;
 }
 
 .light {
+  color: $complementaryColor;
   background: $primaryColor;
 }
 
 .dark {
+  color: $primaryColor;
   background: $complementarySkewColor;
 }

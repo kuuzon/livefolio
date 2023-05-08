@@ -1,0 +1,33 @@
+.customCard {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1rem;
+
+  background-color: #fff;
+  color: #333;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+
+  .cardStats {
+    display: flex;
+    margin: 1rem 0;
+  }
+  
+  .cardStat {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    
+    svg {
+      margin-right: 0.5rem;
+    }
+    
+    span {
+      font-size: 0.9rem;
+    }
+  }
+}

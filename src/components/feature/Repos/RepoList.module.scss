@@ -1,0 +1,18 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.reposContainer {
+  max-width: 1000px;
+  margin: auto;
+  padding: 3rem 0;
+
+  h2 {
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+
+  .reposList {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
