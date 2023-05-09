@@ -7,8 +7,11 @@ const RepoRow = (props) => {
   const { theme } = useTheme();
 
   return (
-    <div className={`${styles.repoItem} ${styles[theme]}`}>
-      <Link href={`/repos/${props.name}`}>
+    <div  >
+      <Link 
+        className={`${styles.repoItem} ${styles[theme]}`}
+        href={`/repos/${props.name}`}
+      >
         <div className={styles.repoHeader}>
           <h3>{props.name}</h3>
           <p>{props.description}</p>

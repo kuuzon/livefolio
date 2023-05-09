@@ -1,0 +1,33 @@
+@use '@/styles/scss/abstracts/' as *;
+
+%customAnchor {
+  padding: 0.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  justify-content: space-between;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.light.anchorCard {
+  @extend %customAnchor;
+  @include setBackground($primaryColor);
+
+  &:hover {
+    background-color: $highlightSkewColor;
+  }
+}
+
+.dark.anchorCard {
+  @extend %customAnchor;
+  @include setBackground($complementarySkewColor);
+
+  &:hover {
+    background-color: $complementaryLightColor;
+  }
+}

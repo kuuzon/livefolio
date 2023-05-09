@@ -1,0 +1,10 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.userList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-content: center;
+  justify-content: center;
+  margin: 2rem 0;
+}

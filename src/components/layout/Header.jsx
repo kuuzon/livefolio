@@ -25,6 +25,7 @@ const Header = () => {
             <Nav.Link className={styles.navLink} as={Link} href="/about">ABOUT</Nav.Link>
             <Nav.Link className={styles.navLink} as={Link} href="/projects">PROJECTS</Nav.Link>
             <Nav.Link className={styles.navLink} as={Link} href="/repos">REPOS</Nav.Link>
+            <Nav.Link className={styles.navLink} as={Link} href="/users">GITUSERS</Nav.Link>
           </Nav>
           {/* RIGHT MAIN NAVS */}
           <div className="mt-1">

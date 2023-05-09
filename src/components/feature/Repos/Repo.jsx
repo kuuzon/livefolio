@@ -1,10 +1,10 @@
 import styles from "./Repo.module.scss";
-import Link from "next/link";
+import AbpButton from "@/components/common/AbpButton";
 import { FaStar, FaCodeBranch, FaEye } from "react-icons/fa";
 
 const Repo = ({ repo }) => {
   return (
-    <div className={styles.customCard}>
+    <div className={styles.repoDetailCard}>
       <h2>{repo.name}</h2>
       <p>{repo.description}</p>
       <div className={styles.cardStats}>
@@ -21,9 +21,9 @@ const Repo = ({ repo }) => {
           <span>{repo.watchers_count}</span>
         </div>
       </div>
-      <Link href={repo.html_url} target='_blank'>
+      <AbpButton path={repo.html_url} target={true}>
         {repo.name}
-      </Link>
+      </AbpButton>
     </div>
   );
 };

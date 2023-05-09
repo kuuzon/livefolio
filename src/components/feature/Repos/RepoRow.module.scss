@@ -45,45 +45,45 @@
 }
 
 .light.repoItem {
-  a {
-    @extend %customAnchor;
-    color: $brandDarkColor;
-    background-color: $primaryColor;
+  @extend %customAnchor;
+  @include setBackground($primaryColor);
 
-    &:hover {
-      background-color: $highlightSkewColor;
-    }
+  &:hover {
+    background-color: $highlightSkewColor;
+  }
 
-    .repoHeader {
-      p {
-        color: $complementaryColor;
-      }
-    }
-
-    .repoDetails {
+  .repoHeader {
+    h3 {
       color: $brandDarkColor;
     }
+    p {
+      color: $complementaryColor;
+    }
+  }
+
+  .repoDetails {
+    color: $brandDarkColor;
   }
 }
 
 .dark.repoItem {
-  a {
-    @extend %customAnchor;
-    color: $brandColor;
-    background-color: $complementarySkewColor;
+  @extend %customAnchor;
+  @include setBackground($complementarySkewColor);
 
-    &:hover {
-      background-color: $complementaryLightColor;
-    }
+  &:hover {
+    background-color: $complementaryLightColor;
+  }
 
-    .repoHeader {
-      p {
-        color: $primaryColor;
-      }
+  .repoHeader {
+    h3 {
+      color: $brandColor;
     }
+    p {
+      color: $primaryColor;
+    }
+  }
 
-    .repoDetails {
-      color: $highlightColor;
-    }
+  .repoDetails {
+    color: $highlightColor;
   }
 }

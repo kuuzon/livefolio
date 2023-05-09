@@ -1,24 +1,30 @@
-.customCard {
-  border: 1px solid #ccc;
+@use '@/styles/scss/abstracts/' as *;
+
+.repoDetailCard {
+  max-width: 800px;
+  margin: 1rem auto;
+  text-align: center;
+
+  @include setBackground($complementarySkewColor);
+  border: 1px solid $complementaryColor;
   border-radius: 4px;
   padding: 1rem;
-  margin: 1rem;
-
-  background-color: #fff;
-  color: #333;
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-top: 0;
+    margin-bottom: 2rem;
   }
 
   .cardStats {
     display: flex;
+    justify-content: center;
     margin: 1rem 0;
   }
   
   .cardStat {
     display: flex;
+    flex-direction: row;
     align-items: center;
     margin-right: 1rem;
     
