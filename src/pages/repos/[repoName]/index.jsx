@@ -1,5 +1,5 @@
 import AbpButton from '@/components/common/AbpButton';
-import Repo from '@/components/feature/repos/Repo';
+import Repo from '../../components/feature/repos/Repo';
 import { useRouter } from "next/router"
 
 const RepoDetailPage = ({ repo }) => {
