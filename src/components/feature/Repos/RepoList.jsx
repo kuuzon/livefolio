@@ -21,4 +21,4 @@ const RepoList = ({ repos }) => {
   );
 };
 
-export default RepoList;
+export default RepoList

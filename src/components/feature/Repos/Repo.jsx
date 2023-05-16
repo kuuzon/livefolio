@@ -31,4 +31,4 @@ const Repo = ({ repo }) => {
   );
 };
 
-export default Repo;
+export default Repo
