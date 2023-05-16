@@ -1,4 +1,4 @@
-import RepoList from "@/components/feature/repos/RepoList"
+// import RepoList from "@/components/feature/repos/RepoList"
 
 const ReposPage = (props) => {
   const {repos} = props
