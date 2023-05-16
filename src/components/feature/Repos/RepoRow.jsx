@@ -7,28 +7,26 @@ const RepoRow = (props) => {
   const { theme } = useTheme();
 
   return (
-    <div  >
-      <Link 
-        className={`${styles.repoItem} ${styles[theme]}`}
-        href={`/repos/${props.name}`}
-      >
-        <div className={styles.repoHeader}>
-          <h3>{props.name}</h3>
-          <p>{props.description}</p>
-        </div>
-        <div className={styles.repoDetails}>
-          <span>
-            <FaStar /> {props.starCount}
-          </span>
-          <span>
-            <FaCodeBranch /> {props.forkCount}
-          </span>
-          <span>
-            <FaEye /> {props.watcherCount}
-          </span>
-        </div>
-      </Link>
-    </div>
+    <Link 
+      className={`${styles.repoItem} ${styles[theme]}`}
+      href={`/repos/${props.name}`}
+    >
+      <div className={styles.repoHeader}>
+        <h3>{props.name}</h3>
+        <p>{props.description}</p>
+      </div>
+      <div className={styles.repoDetails}>
+        <span>
+          <FaStar /> {props.starCount}
+        </span>
+        <span>
+          <FaCodeBranch /> {props.forkCount}
+        </span>
+        <span>
+          <FaEye /> {props.watcherCount}
+        </span>
+      </div>
+    </Link>
   );
 };
 

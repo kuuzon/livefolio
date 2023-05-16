@@ -7,7 +7,6 @@ const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['300','400', '500','700'],
   style: ['normal', 'italic']
-  
 })
 
 const Layout = ({ children }) => {

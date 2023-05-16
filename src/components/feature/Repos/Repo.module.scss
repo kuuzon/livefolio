@@ -1,12 +1,9 @@
 @use '@/styles/scss/abstracts/' as *;
 
-.repoDetailCard {
+%customDetailCard {
   max-width: 800px;
   margin: 1rem auto;
   text-align: center;
-
-  @include setBackground($complementarySkewColor);
-  border: 1px solid $complementaryColor;
   border-radius: 4px;
   padding: 1rem;
 
@@ -35,5 +32,17 @@
     span {
       font-size: 0.9rem;
     }
-  }
+  } 
+}
+
+.light.repoDetailCard {
+  @extend %customDetailCard;
+  @include setBackground($primaryColor);
+  border: 1px solid $highlightSkewColor;
+}
+
+.dark.repoDetailCard {
+  @extend %customDetailCard;
+  @include setBackground($complementarySkewColor);
+  border: 1px solid $complementaryColor;
 }

@@ -1,5 +1,5 @@
 import AbpButton from '@/components/common/AbpButton';
-import Repo from '@/components/feature/Repos/Repo';
+import Repo from '@/components/feature/repos/Repo';
 import { useRouter } from "next/router"
 
 const RepoDetailPage = ({ repo }) => {
@@ -17,15 +17,17 @@ const RepoDetailPage = ({ repo }) => {
       <AbpButton path='/repos'>
         Back To Repos
       </AbpButton>
-      <Repo repo={repo} />
+      {repo.message !== "Not Found" && <Repo repo={repo} />}
     </>
   );
 };
 
 export const getServerSideProps = async (context) => {
-  // External API Request: GitHub
+  // Retrieving Dynamic URL Slug
   console.log(context.params.repoName)
   const repoName = context.params.repoName
+
+  // Fetch Request to Specific Git Repo
   const response = await fetch(`https://api.github.com/repos/kuuzon/${repoName}`);
   console.log(response)
   const data = await response.json();

@@ -1,10 +1,13 @@
 import styles from "./Repo.module.scss";
 import AbpButton from "@/components/common/AbpButton";
+import useTheme from "@/hooks/useTheme";
 import { FaStar, FaCodeBranch, FaEye } from "react-icons/fa";
 
 const Repo = ({ repo }) => {
+  const { theme } = useTheme();
+
   return (
-    <div className={styles.repoDetailCard}>
+    <div className={`${styles.repoDetailCard} ${styles[theme]}`}>
       <h2>{repo.name}</h2>
       <p>{repo.description}</p>
       <div className={styles.cardStats}>

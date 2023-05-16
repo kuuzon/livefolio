@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import UserList from "@/components/feature/GitUsers/UserList";
+import UserList from "@/components/feature/users/UserList";
 import Loader from "@/components/common/Loader";
 import { Container } from "react-bootstrap";
 
-const GitUsers = () => {
+const UsersPage = () => {
   // States & Initial States
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ const GitUsers = () => {
   async function fetchUsers() {
     try {
       const response = await fetch(
-        'https://api.github.com/search/users?q=kitten&per_page=12'
+        'https://api.github.com/search/users?q=kuuz&per_page=12'
       );
       const data = await response.json();
       console.log(data.items);
@@ -57,4 +57,4 @@ const GitUsers = () => {
   )
 }
 
-export default GitUsers
+export default UsersPage
