@@ -6,11 +6,10 @@ const RepoDetailPage = ({ repo }) => {
   // INTIAL ROUTING
   const router = useRouter();
   const repoName = router.query.repoName
-  console.log(repoName);
 
   // DATA FETCH
   // IF CURIOUS RE SSR LOADING SPINNER: https://stackoverflow.com/questions/60755316/next-js-getserversideprops-show-loading/60756105#60756105
-  console.log(repo)
+  // console.log(repo)
 
   return (
     <>
@@ -29,7 +28,7 @@ export const getServerSideProps = async (context) => {
 
   // Fetch Request to Specific Git Repo
   const response = await fetch(`https://api.github.com/repos/kuuzon/${repoName}`);
-  console.log(response)
+  // console.log(response)
   const data = await response.json();
 
   return {

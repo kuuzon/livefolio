@@ -2,8 +2,7 @@ import RepoList from "@/components/feature/repos/RepoList"
 
 const ReposPage = (props) => {
   const {repos} = props
-  console.log(repos)
-
+  
   return (
     <div>
       {repos.length > 0 && < RepoList repos={repos} />}
