@@ -1,12 +1,11 @@
-import RepoList from "@/components/feature/repos/RepoList";
+import RepoList from "@/components/feature/repos/RepoList"
 
 const ReposPage = (props) => {
   const {repos} = props
-
+  
   return (
     <div>
-      <p>template</p>
-      {/* {repos.length > 0 && < RepoList repos={repos} />} */}
+      {repos.length > 0 && < RepoList repos={repos} />}
     </div>
   )
 }
