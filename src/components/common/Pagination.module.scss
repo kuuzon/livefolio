@@ -1,0 +1,91 @@
+@use '@/styles/scss/abstracts' as *;
+
+// Need theme
+
+%pageBox {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  
+  a {
+    border-radius: 0px;
+    z-index: 0;
+
+    .icon {
+      z-index: 100;
+      font-size: 1em;
+      transition: all .2s ease-in-out;
+    }
+
+    &:hover .icon {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.light.currentPage {
+  @extend %pageBox;
+
+  a {
+    border: solid $brandColor 1px;
+
+    &:focus, &:visited {
+      @include setBackground($brandColor);
+      box-shadow: none;
+    }
+
+    .icon, &:hover .icon {
+      color: $primaryColor;
+    }
+  }
+}
+
+.light.indexedPage {
+  @extend %pageBox;
+
+  a {
+    border: solid $brandColor 1px;
+    
+    &:focus, &:visited {
+      @include setBackground($primaryColor);
+      box-shadow: none;
+    }
+
+    .icon, &:hover .icon {
+      color: $brandColor;
+    }
+  } 
+}
+
+.dark.currentPage {
+  @extend %pageBox;
+
+  a {
+    border: solid $complementarySkewColor 1px;
+
+    &:focus, &:visited {
+      @include setBackground($complementarySkewColor);
+      box-shadow: none;
+    }
+
+    .icon, &:hover .icon {
+      color: $primaryColor;
+    }
+  }
+}
+
+.dark.indexedPage {
+  @extend %pageBox;
+
+  a {
+    border: solid $complementarySkewColor 1px;
+    &:focus, &:visited {
+      @include setBackground($complementaryLightColor);
+      box-shadow: none;
+    }
+
+    .icon, &:hover .icon {
+      color: $highlightSkewColor;
+    }
+  } 
+}
