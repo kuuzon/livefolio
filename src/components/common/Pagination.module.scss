@@ -6,11 +6,12 @@
   height: 2.5rem;
   
   a {
+    border: solid $brandColor 1px;
     border-radius: 0px;
     z-index: 0;
 
-    &:focus, 
-    &:visited {
+    &:focus, &:visited {
+      @include setBackground($primaryColor);
       box-shadow: none;
     }
 
@@ -30,8 +31,6 @@
   @extend %pageBox;
 
   a {
-    border: solid $brandColor 1px;
-
     &:focus, &:visited {
       @include setBackground($brandColor);
     }
@@ -46,8 +45,6 @@
   @extend %pageBox;
 
   a {
-    border: solid $brandColor 1px;
-    
     &:focus, &:visited {
       @include setBackground($primaryColor);
     }
