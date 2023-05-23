@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import styles from './UserList.module.scss'
 import UserRow from "./UserRow";
-import Pagination from "@/components/common/Pagination";
+import AbpPagination from "@/components/common/AbpPagination";
 import paginate from "@/lib/pagination/paginate";
 
 // (i) STRUCTURE OF OUR LOOP: 
@@ -33,7 +33,7 @@ const UserList = ({ users, itemsCount }) => {
         ))}
       </div>
       {/* PAGINATION */}
-      <Pagination 
+      <AbpPagination 
         itemsCount={itemsCount} 
         currentPage={currentPage}
         pageSize={pageSize} 

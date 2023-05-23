@@ -1,8 +1,10 @@
-import styles from './Pagination.module.scss'
+import styles from './AbpPagination.module.scss'
 import lodash from 'lodash';
 import useTheme from "@/hooks/useTheme";
+import Pagination from 'react-bootstrap/Pagination';
+// BS PAGINATION DOCS: https://react-bootstrap.github.io/components/pagination/
 
-const Pagination = ({ itemsCount, currentPage, pageSize, onPageChange }) => {
+const AbpPagination = ({ itemsCount, currentPage, pageSize, onPageChange }) => {
   const { theme } = useTheme();
   
   // VALUE: Determine number of pages from items & items per page
@@ -21,23 +23,20 @@ const Pagination = ({ itemsCount, currentPage, pageSize, onPageChange }) => {
   return (
     <>
       <nav className="mb-4" aria-label="user pagination">
-        <ul className="pagination justify-content-center">
+        <Pagination className="justify-content-center">
           {pages.map(page => (
-            <li 
+            <Pagination.Item 
               key={page} 
-              className={(`page-item ${styles[theme]} ${page === currentPage ? styles.currentPage : styles.indexedPage}`)}>
-              <button 
-                onClick={() => onPageChange(page)}
-                className={(`page-link`)}
-              >
-                <span className={styles.icon}>{page}</span>
-              </button>
-            </li>
+              onClick={() => onPageChange(page)}
+              className={(`${styles[theme]} ${page === currentPage ? styles.currentPage : styles.indexedPage}`)}
+            >
+              <span className={styles.icon}>{page}</span>
+            </Pagination.Item>
           ))}
-        </ul>
+        </Pagination>
       </nav>
     </>
   )
 }
 
-export default Pagination
+export default AbpPagination
