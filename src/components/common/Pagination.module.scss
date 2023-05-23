@@ -62,7 +62,9 @@
     border: solid $complementarySkewColor 1px;
 
     &:focus, &:visited {
-      @include setBackground($complementarySkewColor);
+      // @include setBackground($complementarySkewColor);
+      background-color: $complementarySkewColor;
+      color: $primaryColor;
     }
 
     .icon, &:hover .icon {
