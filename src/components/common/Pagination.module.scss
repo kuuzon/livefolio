@@ -9,6 +9,11 @@
     border-radius: 0px;
     z-index: 0;
 
+    &:focus, 
+    &:visited {
+      box-shadow: none;
+    }
+
     .icon {
       z-index: 100;
       font-size: 1em;
@@ -29,7 +34,6 @@
 
     &:focus, &:visited {
       @include setBackground($brandColor);
-      box-shadow: none;
     }
 
     .icon, &:hover .icon {
@@ -46,7 +50,6 @@
     
     &:focus, &:visited {
       @include setBackground($primaryColor);
-      box-shadow: none;
     }
 
     .icon, &:hover .icon {
@@ -63,7 +66,6 @@
 
     &:focus, &:visited {
       @include setBackground($complementarySkewColor);
-      box-shadow: none;
     }
 
     .icon, &:hover .icon {
@@ -77,9 +79,9 @@
 
   a {
     border: solid $complementarySkewColor 1px;
+
     &:focus, &:visited {
       @include setBackground($complementaryLightColor);
-      box-shadow: none;
     }
 
     .icon, &:hover .icon {
