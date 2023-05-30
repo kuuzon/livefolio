@@ -1,42 +1,53 @@
 import React, { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
 import UserList from "@/components/feature/users/UserList";
 import Loader from "@/components/common/Loader";
-import { Container } from "react-bootstrap";
 
 const UsersPage = () => {
-  // States & Initial States
-  const [users, setUsers] = useState([]);
-  const [itemsCount, setItemsCount] = useState(0);
-  const [query, setQuery] = useState("kuuz");
+  // BASE STATES
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  // USER STATES
+  const [users, setUsers] = useState([]);
+  const [query, setQuery] = useState("kuuz");
+  // PAGINATION STATES
+  const [pageSize, setPageSize] = useState(12);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsCount, setItemsCount] = useState(1);
 
   // DATA FETCH: Call API Data on Mount
   useEffect(() => {
-    fetchUsers(query);
-    setItemsCount(users.length);
-    console.log(`CORRECT Total Users Count: ${itemsCount}`)
+    fetchUsers(query, pageSize, currentPage);
     setLoading(false);
-  }, [query, users.length, itemsCount]);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [query, itemsCount, pageSize, currentPage]);
 
-  // Fetch API Data Function
-  // DOCS: https://docs.github.com/en/rest/search?apiVersion=2022-11-28#search-users
-  async function fetchUsers(query) {
+  // FUNCTION: Fetch API User Data - https://docs.github.com/en/rest/search?apiVersion=2022-11-28#search-users
+  async function fetchUsers(query, pageSize, currentPage) {
     try {
+      const headers = {
+        'Authorization': `Bearer ${process.env.NEXT_PUBLIC_GITHUB_API_TOKEN}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
       const response = await fetch(
-        `https://api.github.com/search/users?q=${query}&per_page=100`
+        `https://api.github.com/search/users?q=${query}&per_page=${pageSize}&page=${currentPage}`, 
+        { headers }
       );
       const data = await response.json();
       console.log(data);
       setUsers(data.items);
-
-      // GITHUB API: The total count relies on further customisation - we will do ourselves!
-      // setItemsCount(data.total_count);
+      setItemsCount(data.total_count);
 
     } catch (err) {
       setError("Fetch Error: Cannot Retrieve Github Data")
       console.log(err)
     }
+  }
+
+  // PAGINATION FUNCTION 1: Handle changing of page
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
   }
 
   // Conditional Renders
@@ -60,7 +71,13 @@ const UsersPage = () => {
   // Successful render
   return (
     <Container>
-      { users.length > 0 && <UserList users={users} itemsCount={itemsCount} /> }
+      { users.length > 0 && <UserList 
+        users={users}
+        itemsCount={itemsCount} 
+        currentPage={currentPage}
+        pageSize={pageSize} 
+        onPageChange={handlePageChange} 
+      /> }
     </Container>
   )
 }

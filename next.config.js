@@ -23,6 +23,7 @@ module.exports = (phase) => {
       if (isDev) return 'http://localhost:3000/'
       if (isProd) return 'https://livefolio.vercel.app/'
     })(),
+    NEXT_PUBLIC_GITHUB_API_TOKEN: process.env.NEXT_PUBLIC_GITHUB_API_TOKEN
   }
 
   // Next.config is an object

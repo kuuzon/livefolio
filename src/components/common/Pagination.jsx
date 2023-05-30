@@ -11,11 +11,10 @@ const Pagination = ({ itemsCount, currentPage, pageSize, onPageChange }) => {
   // VALUE: Generate array of all page numbers needed
   // LODASH: https://lodash.com/docs/4.17.15#range
   const pages = lodash.range(1, pagesCount + 1);
+  console.log(pages);
 
   // CONDITIONAL LOAD: Items < items per page
-  if(pagesCount === 1){
-    return null;
-  }
+  if(pagesCount === 1) return null;
 
   // SUCCESS LOAD: Multiple pages
   return (
