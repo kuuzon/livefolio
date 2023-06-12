@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import UserList from "@/components/feature/users/UserList";
 import Loader from "@/components/common/Loader";
 
 const UsersPage = () => {
-  // BASE STATES
+  // FALLBACK STATES
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   // USER STATES
@@ -20,24 +20,22 @@ const UsersPage = () => {
     fetchUsers(query, pageSize, currentPage);
     setLoading(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [query, itemsCount, pageSize, currentPage]);
+  }, [query, pageSize, currentPage]);
 
   // FUNCTION: Fetch API User Data - https://docs.github.com/en/rest/search?apiVersion=2022-11-28#search-users
   async function fetchUsers(query, pageSize, currentPage) {
     try {
+      const url = `https://api.github.com/search/users?q=${query}&per_page=${pageSize}&page=${currentPage}`
       const headers = {
         'Authorization': `Bearer ${process.env.NEXT_PUBLIC_GITHUB_API_TOKEN}`,
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       }
-      const response = await fetch(
-        `https://api.github.com/search/users?q=${query}&per_page=${pageSize}&page=${currentPage}`, 
-        { headers }
-      );
+      const response = await fetch(url, { headers });
       const data = await response.json();
       console.log(data);
       setUsers(data.items);
-      setItemsCount(data.total_count);
+      setItemsCount(data.total_count > 1000 ? 1000 : data.total_count);
 
     } catch (err) {
       setError("Fetch Error: Cannot Retrieve Github Data")

@@ -2,7 +2,6 @@ import styles from './AbpPagination.module.scss'
 import lodash from 'lodash';
 import useTheme from "@/hooks/useTheme";
 import Pagination from 'react-bootstrap/Pagination';
-// BS PAGINATION DOCS: https://react-bootstrap.github.io/components/pagination/
 
 const AbpPagination = ({ itemsCount, currentPage, pageSize, onPageChange }) => {
   const { theme } = useTheme();
@@ -11,7 +10,6 @@ const AbpPagination = ({ itemsCount, currentPage, pageSize, onPageChange }) => {
   const pagesCount = Math.ceil(itemsCount / pageSize);
 
   // VALUE: Generate array of all page numbers needed
-  // LODASH: https://lodash.com/docs/4.17.15#range
   const pages = lodash.range(1, pagesCount + 1);
 
   // CONDITIONAL LOAD: Items < items per page
