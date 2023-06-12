@@ -9,7 +9,7 @@ const UsersPage = () => {
   const [error, setError] = useState("");
   // USER STATES
   const [users, setUsers] = useState([]);
-  const [query, setQuery] = useState("kuuz");
+  const [query, setQuery] = useState("john");
   // PAGINATION STATES
   const [pageSize, setPageSize] = useState(12);
   const [currentPage, setCurrentPage] = useState(1);
