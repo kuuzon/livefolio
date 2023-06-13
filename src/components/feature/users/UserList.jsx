@@ -3,7 +3,6 @@ import styles from './UserList.module.scss'
 import UserRow from "./UserRow";
 import AbpPagination from "@/components/common/AbpPagination";
 
-// (i) STRUCTURE OF OUR LOOP: 
 const UserList = ({ users, itemsCount, currentPage, pageSize, onPageChange }) => {  
   return (
     <Fragment>

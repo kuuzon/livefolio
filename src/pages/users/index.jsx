@@ -35,6 +35,7 @@ const UsersPage = () => {
       const data = await response.json();
       console.log(data);
       setUsers(data.items);
+      // NOTE: GitHub API LIMITS total items to 1000
       setItemsCount(data.total_count > 1000 ? 1000 : data.total_count);
 
     } catch (err) {
