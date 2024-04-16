@@ -1,18 +1,19 @@
-import HeroBox from "@/components/common/HeroBox";
-import AbpButton from "@/components/common/AbpButton";
+import AbpLink from "@/components/common/AbpLink";
 import { Container } from "react-bootstrap";
 import { BsPersonCircle } from "react-icons/bs";
 
 const HomePage = () => {
   return (
     <Container>
-      {/* TITLE BOX */}
-      <HeroBox title='Welcome to LiveFolio'>
+      <div id="hero-section" className="text-center">
+        <h1>Portfolio Base</h1>
         <p>My name is Alex ~ I build things, break things and mend things!</p>
-        <AbpButton path='/about'>
+        
+        {/* Custom Button Component */}
+        <AbpLink path="/about">
           <BsPersonCircle />
-        </AbpButton>
-      </HeroBox>
+        </AbpLink>
+      </div>
     </Container>
   );
 };

@@ -14,7 +14,7 @@ const Header = () => {
     <Navbar className={styles[theme]} expand="lg" variant="dark">
       <Container>
         <Navbar.Brand className={styles.navLink} as={Link} href="/">
-          <IoLeafOutline className="mb-1"/>
+          <IoLeafOutline className={styles.icon} style={{color: 'aqua'}} />
           {' '}
           LiveFolio
         </Navbar.Brand>

@@ -1,4 +1,4 @@
-import AbpButton from '@/components/common/AbpButton';
+import AbpLink from '@/components/common/AbpLink';
 import Repo from '@/components/feature/repos/Repo';
 import { useRouter } from "next/router"
 
@@ -12,12 +12,12 @@ const RepoDetailPage = ({ repo }) => {
   // console.log(repo)
 
   return (
-    <>
-      <AbpButton path='/repos'>
+    <div className='text-center'>
+      <AbpLink path='/repos'>
         Back To Repos
-      </AbpButton>
+      </AbpLink>
       {repo.message !== "Not Found" && <Repo repo={repo} />}
-    </>
+    </div>
   );
 };
 

@@ -15,5 +15,5 @@
 }
 
 .dark {
-  @include setBackground($complementarySkewColor);
+  @include setBackground(darken($complementaryColor, 3%));
 }

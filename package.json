@@ -10,18 +10,18 @@
     "build:scss": "sass --no-source-map src/styles/scss/main.scss:src/styles/globals.css"
   },
   "dependencies": {
-    "bootstrap": "^5.2.3",
-    "eslint": "8.39.0",
-    "eslint-config-next": "13.3.4",
+    "bootstrap": "^5.3.3",
     "lodash": "^4.17.21",
-    "next": "13.3.4",
-    "react": "18.2.0",
-    "react-bootstrap": "^2.7.4",
-    "react-dom": "18.2.0",
-    "react-icons": "^4.8.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.2.1",
+    "react-bootstrap": "^2.10.2",
+    "react-icons": "^5.1.0",
     "react-switch": "^7.0.0"
   },
   "devDependencies": {
-    "sass": "^1.62.1"
+    "eslint": "^8",
+    "eslint-config-next": "14.2.1",
+    "sass": "^1.75.0"
   }
 }

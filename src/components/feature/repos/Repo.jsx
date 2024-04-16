@@ -1,5 +1,5 @@
 import styles from "./Repo.module.scss";
-import AbpButton from "@/components/common/AbpButton";
+import AbpLink from "@/components/common/AbpLink";
 import useTheme from "@/hooks/useTheme";
 import { FaStar, FaCodeBranch, FaEye } from "react-icons/fa";
 
@@ -24,9 +24,9 @@ const Repo = ({ repo }) => {
           <span>{repo.watchers_count}</span>
         </div>
       </div>
-      <AbpButton path={repo.html_url} target={true}>
+      <AbpLink path={repo.html_url} target={true}>
         {repo.name}
-      </AbpButton>
+      </AbpLink>
     </div>
   );
 };

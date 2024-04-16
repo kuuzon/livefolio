@@ -1,9 +1,9 @@
 import Header from './Header';
 import Footer from './Footer';
 import useTheme from '../../hooks/useTheme';
-import { Montserrat } from 'next/font/google';
+import { Open_Sans } from 'next/font/google';
 
-const montserrat = Montserrat({
+const montserrat = Open_Sans({
   subsets: ['latin'],
   weight: ['300','400', '500','700'],
   style: ['normal', 'italic']
@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
     <div className={`app ${theme} ${montserrat.className}`}>
       <Header />
       {/* Wrap all content in column-direction flexbox */}
-      <div className="contentWindow">
+      <div className="appContent">
         {children}
       </div>
       <Footer />

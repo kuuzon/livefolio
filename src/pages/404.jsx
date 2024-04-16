@@ -1,4 +1,4 @@
-import AbpButton from '@/components/common/AbpButton';
+import AbpLink from '@/components/common/AbpLink';
 import notFound from '../../public/notFound.png'
 import Image from 'next/image';
 import { Container } from 'react-bootstrap';
@@ -19,9 +19,9 @@ const NotFoundPage = () => {
           />
         </div>
         
-        <AbpButton path="/">
+        <AbpLink path="/">
           <FiHome />
-        </AbpButton>
+        </AbpLink>
       </Container>
     </div>
   )

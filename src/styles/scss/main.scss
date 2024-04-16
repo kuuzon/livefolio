@@ -23,4 +23,5 @@
 // layout imports (NOW: SCSS Modules)
 
 // page imports (OPTION: can be used as SCSS Modules if preferred)
+@use './pages/hero';
 @use './pages/notfound';
