@@ -1,6 +1,6 @@
 import Header from './Header';
 import Footer from './Footer';
-import useTheme from '../../hooks/useTheme';
+import useTheme from '@/hooks/useTheme';
 import { Open_Sans } from 'next/font/google';
 
 const montserrat = Open_Sans({

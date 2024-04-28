@@ -1,11 +1,10 @@
-import styles from './Header.module.scss';
 import Link from 'next/link';
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { IoLeafOutline } from 'react-icons/io5';
 
-// Toggle Switches
+import styles from './Header.module.scss';
+import useTheme from '@/hooks/useTheme';
 import ThemeToggler from "../common/ThemeToggler";
-import useTheme from '../../hooks/useTheme';
 
 const Header = () => {
   const { theme } = useTheme(); 

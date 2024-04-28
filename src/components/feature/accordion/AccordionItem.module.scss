@@ -1,0 +1,32 @@
+@use '@/styles/scss/abstracts/' as *;
+
+.light {
+  background-color: $primaryColor;
+  border-color: $complementaryColor;
+}
+
+.dark {
+  background-color: lighten($complementaryColor, 3%);
+  border-color: $primaryColor;
+}
+
+.accordionBox {
+  width: 40dvw;
+  padding: 2rem;
+  margin: 1rem 0;
+  border: 3px solid;
+  border-radius: 5px;
+  transition: border-color 0.2s ease-in, transform 0.2s ease-in;
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+}
+
+.activeBox {
+  @extend .accordionBox;
+  border: 3px $brandColor solid;
+  transform: scale(1.01);
+}

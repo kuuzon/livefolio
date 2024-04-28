@@ -1,13 +1,21 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
+import { useState } from "react";
+import { Container } from "react-bootstrap"
+
+import AccordionList from "@/components/feature/accordion/AccordionList";
 
 const AboutPage = () => {
+  const [panels, setPanels] = useState([
+    { id: 1, title: "What Am I Currently Up To", content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quis libero praesentium repellat quo sequi laborum ducimus quia molestiae blanditiis repellendus voluptatum aliquam, ratione a voluptatem doloribus aperiam? Ad, suscipit." },
+    { id: 2, title: "What Makes Me Code", content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quis libero praesentium repellat quo sequi laborum ducimus quia molestiae blanditiis repellendus voluptatum aliquam, ratione a voluptatem doloribus aperiam? Ad, suscipit." },
+    { id: 3, title: "What Have I Got Involved In", content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet quis libero praesentium repellat quo sequi laborum ducimus quia molestiae blanditiis repellendus voluptatum aliquam, ratione a voluptatem doloribus aperiam? Ad, suscipit." },
+  ]);
+
   return (
-    <Container className="my-4">
-      <h2 className="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, officiis.</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis omnis quod porro doloremque maxime enim ipsa quae, quidem voluptatem. Nostrum animi exercitationem corrupti, nesciunt tempore illum possimus nihil cupiditate eveniet velit repellendus accusantium, molestias veniam consectetur nisi ipsam assumenda suscipit architecto, eos obcaecati eaque iure excepturi. Sed quod nesciunt minima quis dolore? Iure delectus dignissimos beatae, eaque enim quam a labore porro cumque minima ratione ducimus explicabo ut eum hic eveniet! Unde sit voluptatem assumenda veniam officia illum fuga laboriosam ab! Reprehenderit eligendi modi dolor, illo est aperiam nobis quasi illum eius possimus, recusandae odit deserunt dignissimos? Aliquid, eveniet?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis omnis quod porro doloremque maxime enim ipsa quae, quidem voluptatem. Nostrum animi exercitationem corrupti, nesciunt tempore illum possimus nihil cupiditate eveniet velit repellendus accusantium, molestias veniam consectetur nisi ipsam assumenda suscipit architecto, eos obcaecati eaque iure excepturi. Sed quod nesciunt minima quis dolore? Iure delectus dignissimos beatae, eaque enim quam a labore porro cumque minima ratione ducimus explicabo ut eum hic eveniet! Unde sit voluptatem assumenda veniam officia illum fuga laboriosam ab! Reprehenderit eligendi modi dolor, illo est aperiam nobis quasi illum eius possimus, recusandae odit deserunt dignissimos? Aliquid, eveniet?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis omnis quod porro doloremque maxime enim ipsa quae, quidem voluptatem. Nostrum animi exercitationem corrupti, nesciunt tempore illum possimus nihil cupiditate eveniet velit repellendus accusantium, molestias veniam consectetur nisi ipsam assumenda suscipit architecto, eos obcaecati eaque iure excepturi. Sed quod nesciunt minima quis dolore? Iure delectus dignissimos beatae, eaque enim quam a labore porro cumque minima ratione ducimus explicabo ut eum hic eveniet! Unde sit voluptatem assumenda veniam officia illum fuga laboriosam ab! Reprehenderit eligendi modi dolor, illo est aperiam nobis quasi illum eius possimus, recusandae odit deserunt dignissimos? Aliquid, eveniet?</p>
+    <Container className="text-center">
+      <h1>About Me</h1>
+      <AccordionList 
+        panels={panels}
+      />
     </Container>
   )
 }
